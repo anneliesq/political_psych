@@ -1,7 +1,7 @@
 ---
 title: "Week 1: Making Decisions"
 author: "Annelies Quinton"
-date: 2020-12-01T21:13:14-05:00
+date: 2023-09-19
 categories: []
 tags: []
 ---
@@ -25,7 +25,7 @@ For this week's post, I am looking at the relationship of perceived candidate co
 
 Through a psychological lens, this thought process is supported through the idea of different decision making systems in the brain. System 1 is described as our intuition and it is fast, automatic, and effortless. Conversely, system 2 is reasoning, and requires effort, time, and logic (Kahneman, D. 2003, 698). When connecting this idea to voting, one hypothesis is that for voters with less partisan loyalty or knowledge of the election, system 1 may be triggered and attribute substitution can occur, causing variables such as face ratings to determine one's vote. 
 
-Although this rationale may appear disconnected, in the paper *Candidate Faces and Election Outcomes: Is the Face--Vote Correlation Caused by Candidate Selection?*, the scholars find "higher quality challenger faces are selected into more competitive districts" (Atkinson et al. 2009, 230). They ultimately assert that "...incumbents from the most competitive districts would have higher facial quality than incumbents from the most safe incumbent districts due to the selection process of better faces to competitive districts, inducing a negative relationship between incumbent face and incumbent vote" (Atkinson et al. 2009, 236). 
+Although this rationale may appear disconnected, in the paper *Candidate Faces and Election Outcomes: Is the Face--Vote Correlation Caused by Candidate Selection?*, the scholars find "higher quality challenger faces are selected into more competitive districts" (Atkinson et al. 2009, 230). They ultimately assert that "...incumbents from the most competitive districts would have higher facial quality than incumbents from the most safe incumbent districts due to the selection process of better faces to competitive districts, inducing a negative relationship between incumbent face and incumbent vote" (Atkinson et al. 2009, 236).
 
 The data presented in this blog will address the question of whether seat safety is negatively correlated with incumbent facial quality?
 
@@ -35,15 +35,15 @@ The data used in this blog is a condensed and adapted version of the replication
 
 | Variable Name         | Variable Description                                                                               |
 |--------------------------|----------------------------------------------|
-| \texttt{cook}         | The assessment of the Senate race from the Cook Political Report in the year prior to the election |
-| \texttt{year}         | The year of the election                                                                           |
-| \texttt{state}        | The state in which the candidate was running                                                       |
-| \texttt{face\_rating} | The normalized rating of the candidate's perceived competence based on an image of the face        |
-| \texttt{incumbent}    | An indicator variable for whether the candidate was an incumbent                                   |
-| \texttt{candidate}    | The candidate's name                                                                               |
-| \texttt{party}        | The candidate's political party                                                                    |
-| \texttt{tossup}       | An indicator variable for whether the race was one of two "tossup" categories according to Cook    |
-| \texttt{jpg}          | A unique identifier for the photo of the candidate                                                 |
+| `cook`         | The assessment of the Senate race from the Cook Political Report in the year prior to the election |
+| `year`         | The year of the election                                                                           |
+| `state`        | The state in which the candidate was running                                                       |
+| `face_rating` | The normalized rating of the candidate's perceived competence based on an image of the face        |
+| `incumbent`    | An indicator variable for whether the candidate was an incumbent                                   |
+| `candidate`    | The candidate's name                                                                               |
+| `party`        | The candidate's political party                                                                    |
+| `tossup`       | An indicator variable for whether the race was one of two "tossup" categories according to Cook    |
+| `jpg`          | A unique identifier for the photo of the candidate                                                 |
 
 The data used in this blog is a condensed and adapted version of the [replication data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RSI8NR) for Atkinson et al. (2009).  The variables of interest are `face_rating`, `incumbent`, `tossup`, and `party`.
 
@@ -57,7 +57,7 @@ ggplot(data = senate, aes(x = face_rating, color = party)) +
   geom_density()                                              
 ```
 
-## Face Rating: Imbency and Toss-Up
+## Face Rating: Incumbency and Toss-Up
 
 To understand the relationship between incumbent seat safety and face rating, I looked at the spread of face ratings for four different groups:
 
