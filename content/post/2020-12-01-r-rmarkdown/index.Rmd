@@ -33,17 +33,17 @@ The data presented in this blog will address the question of whether seat safety
 
 The data used in this blog is a condensed and adapted version of the replication data for Atkinson et al. (2009). The variables of interest are `face_rating`,`incumbent`, `tossup`, and `face_rating`.
 
-| Variable Name         | Variable Description                                                                               |
+| Variable Name | Variable Description                                                                               |
 |--------------------------|----------------------------------------------|
-| `cook`         | The assessment of the Senate race from the Cook Political Report in the year prior to the election |
-| `year`         | The year of the election                                                                           |
-| `state`        | The state in which the candidate was running                                                       |
+| `cook`        | The assessment of the Senate race from the Cook Political Report in the year prior to the election |
+| `year`        | The year of the election                                                                           |
+| `state`       | The state in which the candidate was running                                                       |
 | `face_rating` | The normalized rating of the candidate's perceived competence based on an image of the face        |
-| `incumbent`    | An indicator variable for whether the candidate was an incumbent                                   |
-| `candidate`    | The candidate's name                                                                               |
-| `party`        | The candidate's political party                                                                    |
-| `tossup`       | An indicator variable for whether the race was one of two "tossup" categories according to Cook    |
-| `jpg`          | A unique identifier for the photo of the candidate                                                 |
+| `incumbent`   | An indicator variable for whether the candidate was an incumbent                                   |
+| `candidate`   | The candidate's name                                                                               |
+| `party`       | The candidate's political party                                                                    |
+| `tossup`      | An indicator variable for whether the race was one of two "tossup" categories according to Cook    |
+| `jpg`         | A unique identifier for the photo of the candidate                                                 |
 
 The data used in this blog is a condensed and adapted version of the [replication data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RSI8NR) for Atkinson et al. (2009).  The variables of interest are `face_rating`, `incumbent`, `tossup`, and `party`.
 
@@ -51,7 +51,7 @@ The data used in this blog is a condensed and adapted version of the [replicatio
 
 Before looking at seat safety and facial quality, it is important to evaluate trends in the data that could influence conclusions drawn. The graph below illustrates the distribution of face ratings based on the candidate's party. From the graph, it is evident that there is little to no difference between the parties. This is significant in order for comparisons to be made between parties.
 
-```{r, include=TRUE}
+```{r, echo=F}
 # density plot of perceived competence by party
 ggplot(data = senate, aes(x = face_rating, color = party)) + 
   geom_density()                                              
@@ -72,7 +72,6 @@ To understand the relationship between incumbent seat safety and face rating, I 
 `CT`: Challenger in a toss-up race
 
 `CF`: Challenger not in a toss-up race
-
 
 ```{r, include=FALSE}
 ## seat safety: tossup and incumbent status
@@ -106,7 +105,7 @@ gtTable = gt(senate_noparty) %>%
 
 The table below displays the means for the four groups:
 
-```{r}
+```{r, echo=F}
 ## display table
 gtTable
 ```
@@ -120,7 +119,7 @@ p_safety <- ggplot(senate_safety, aes(x=seat_safety, y=face_rating, fill = seat_
 
 ```
 
-```{r}
+```{r, echo=F}
 p_safety
 ```
 
@@ -161,7 +160,7 @@ p <- ggplot(senate_party, aes(x=seat_party, y=face_rating)) +
 
 ```
 
-```{r, include=TRUE}
+```{r, echo=F}
 gtTable_party
 p
 ```
