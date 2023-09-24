@@ -58,20 +58,20 @@ To understand the relationship between incumbent seat safety and face rating, I 
 
 The table below displays the means for the four groups:
 
-<div id="amayscqday" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#amayscqday table {
+<div id="misgrfncbs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#misgrfncbs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#amayscqday thead, #amayscqday tbody, #amayscqday tfoot, #amayscqday tr, #amayscqday td, #amayscqday th {
+&#10;#misgrfncbs thead, #misgrfncbs tbody, #misgrfncbs tfoot, #misgrfncbs tr, #misgrfncbs td, #misgrfncbs th {
   border-style: none;
 }
-&#10;#amayscqday p {
+&#10;#misgrfncbs p {
   margin: 0;
   padding: 0;
 }
-&#10;#amayscqday .gt_table {
+&#10;#misgrfncbs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -96,11 +96,11 @@ The table below displays the means for the four groups:
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_caption {
+&#10;#misgrfncbs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#amayscqday .gt_title {
+&#10;#misgrfncbs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -111,7 +111,7 @@ The table below displays the means for the four groups:
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#amayscqday .gt_subtitle {
+&#10;#misgrfncbs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -122,7 +122,7 @@ The table below displays the means for the four groups:
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#amayscqday .gt_heading {
+&#10;#misgrfncbs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -133,12 +133,12 @@ The table below displays the means for the four groups:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_bottom_border {
+&#10;#misgrfncbs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_col_headings {
+&#10;#misgrfncbs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -152,7 +152,7 @@ The table below displays the means for the four groups:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_col_heading {
+&#10;#misgrfncbs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -171,7 +171,7 @@ The table below displays the means for the four groups:
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#amayscqday .gt_column_spanner_outer {
+&#10;#misgrfncbs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -182,13 +182,13 @@ The table below displays the means for the four groups:
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#amayscqday .gt_column_spanner_outer:first-child {
+&#10;#misgrfncbs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#amayscqday .gt_column_spanner_outer:last-child {
+&#10;#misgrfncbs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#amayscqday .gt_column_spanner {
+&#10;#misgrfncbs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -199,10 +199,10 @@ The table below displays the means for the four groups:
   display: inline-block;
   width: 100%;
 }
-&#10;#amayscqday .gt_spanner_row {
+&#10;#misgrfncbs .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#amayscqday .gt_group_heading {
+&#10;#misgrfncbs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -227,7 +227,7 @@ The table below displays the means for the four groups:
   vertical-align: middle;
   text-align: left;
 }
-&#10;#amayscqday .gt_empty_group_heading {
+&#10;#misgrfncbs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -241,13 +241,13 @@ The table below displays the means for the four groups:
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#amayscqday .gt_from_md > :first-child {
+&#10;#misgrfncbs .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#amayscqday .gt_from_md > :last-child {
+&#10;#misgrfncbs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#amayscqday .gt_row {
+&#10;#misgrfncbs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -265,7 +265,7 @@ The table below displays the means for the four groups:
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#amayscqday .gt_stub {
+&#10;#misgrfncbs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -277,7 +277,7 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#amayscqday .gt_stub_row_group {
+&#10;#misgrfncbs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -290,13 +290,13 @@ The table below displays the means for the four groups:
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#amayscqday .gt_row_group_first td {
+&#10;#misgrfncbs .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#amayscqday .gt_row_group_first th {
+&#10;#misgrfncbs .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#amayscqday .gt_summary_row {
+&#10;#misgrfncbs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -305,14 +305,14 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#amayscqday .gt_first_summary_row {
+&#10;#misgrfncbs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_first_summary_row.thick {
+&#10;#misgrfncbs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#amayscqday .gt_last_summary_row {
+&#10;#misgrfncbs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -321,7 +321,7 @@ The table below displays the means for the four groups:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_grand_summary_row {
+&#10;#misgrfncbs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -330,7 +330,7 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#amayscqday .gt_first_grand_summary_row {
+&#10;#misgrfncbs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -339,7 +339,7 @@ The table below displays the means for the four groups:
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_last_grand_summary_row_top {
+&#10;#misgrfncbs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -348,10 +348,10 @@ The table below displays the means for the four groups:
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_striped {
+&#10;#misgrfncbs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#amayscqday .gt_table_body {
+&#10;#misgrfncbs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -359,7 +359,7 @@ The table below displays the means for the four groups:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_footnotes {
+&#10;#misgrfncbs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -372,7 +372,7 @@ The table below displays the means for the four groups:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_footnote {
+&#10;#misgrfncbs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -380,7 +380,7 @@ The table below displays the means for the four groups:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#amayscqday .gt_sourcenotes {
+&#10;#misgrfncbs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -393,57 +393,57 @@ The table below displays the means for the four groups:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#amayscqday .gt_sourcenote {
+&#10;#misgrfncbs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#amayscqday .gt_left {
+&#10;#misgrfncbs .gt_left {
   text-align: left;
 }
-&#10;#amayscqday .gt_center {
+&#10;#misgrfncbs .gt_center {
   text-align: center;
 }
-&#10;#amayscqday .gt_right {
+&#10;#misgrfncbs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#amayscqday .gt_font_normal {
+&#10;#misgrfncbs .gt_font_normal {
   font-weight: normal;
 }
-&#10;#amayscqday .gt_font_bold {
+&#10;#misgrfncbs .gt_font_bold {
   font-weight: bold;
 }
-&#10;#amayscqday .gt_font_italic {
+&#10;#misgrfncbs .gt_font_italic {
   font-style: italic;
 }
-&#10;#amayscqday .gt_super {
+&#10;#misgrfncbs .gt_super {
   font-size: 65%;
 }
-&#10;#amayscqday .gt_footnote_marks {
+&#10;#misgrfncbs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#amayscqday .gt_asterisk {
+&#10;#misgrfncbs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#amayscqday .gt_indent_1 {
+&#10;#misgrfncbs .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#amayscqday .gt_indent_2 {
+&#10;#misgrfncbs .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#amayscqday .gt_indent_3 {
+&#10;#misgrfncbs .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#amayscqday .gt_indent_4 {
+&#10;#misgrfncbs .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#amayscqday .gt_indent_5 {
+&#10;#misgrfncbs .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -488,20 +488,20 @@ Rows 1 and 2 show face ratings for incumbents in either a toss-up or safe seat. 
 
 These results can be further broken down by party:
 
-<div id="qvdhxpnait" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qvdhxpnait table {
+<div id="vuhauergsh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vuhauergsh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#qvdhxpnait thead, #qvdhxpnait tbody, #qvdhxpnait tfoot, #qvdhxpnait tr, #qvdhxpnait td, #qvdhxpnait th {
+&#10;#vuhauergsh thead, #vuhauergsh tbody, #vuhauergsh tfoot, #vuhauergsh tr, #vuhauergsh td, #vuhauergsh th {
   border-style: none;
 }
-&#10;#qvdhxpnait p {
+&#10;#vuhauergsh p {
   margin: 0;
   padding: 0;
 }
-&#10;#qvdhxpnait .gt_table {
+&#10;#vuhauergsh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -526,11 +526,11 @@ These results can be further broken down by party:
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_caption {
+&#10;#vuhauergsh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#qvdhxpnait .gt_title {
+&#10;#vuhauergsh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -541,7 +541,7 @@ These results can be further broken down by party:
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#qvdhxpnait .gt_subtitle {
+&#10;#vuhauergsh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -552,7 +552,7 @@ These results can be further broken down by party:
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#qvdhxpnait .gt_heading {
+&#10;#vuhauergsh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -563,12 +563,12 @@ These results can be further broken down by party:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_bottom_border {
+&#10;#vuhauergsh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_col_headings {
+&#10;#vuhauergsh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -582,7 +582,7 @@ These results can be further broken down by party:
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_col_heading {
+&#10;#vuhauergsh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -601,7 +601,7 @@ These results can be further broken down by party:
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#qvdhxpnait .gt_column_spanner_outer {
+&#10;#vuhauergsh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -612,13 +612,13 @@ These results can be further broken down by party:
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#qvdhxpnait .gt_column_spanner_outer:first-child {
+&#10;#vuhauergsh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#qvdhxpnait .gt_column_spanner_outer:last-child {
+&#10;#vuhauergsh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#qvdhxpnait .gt_column_spanner {
+&#10;#vuhauergsh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -629,10 +629,10 @@ These results can be further broken down by party:
   display: inline-block;
   width: 100%;
 }
-&#10;#qvdhxpnait .gt_spanner_row {
+&#10;#vuhauergsh .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#qvdhxpnait .gt_group_heading {
+&#10;#vuhauergsh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -657,7 +657,7 @@ These results can be further broken down by party:
   vertical-align: middle;
   text-align: left;
 }
-&#10;#qvdhxpnait .gt_empty_group_heading {
+&#10;#vuhauergsh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -671,13 +671,13 @@ These results can be further broken down by party:
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#qvdhxpnait .gt_from_md > :first-child {
+&#10;#vuhauergsh .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#qvdhxpnait .gt_from_md > :last-child {
+&#10;#vuhauergsh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#qvdhxpnait .gt_row {
+&#10;#vuhauergsh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -695,7 +695,7 @@ These results can be further broken down by party:
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#qvdhxpnait .gt_stub {
+&#10;#vuhauergsh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -707,7 +707,7 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#qvdhxpnait .gt_stub_row_group {
+&#10;#vuhauergsh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -720,13 +720,13 @@ These results can be further broken down by party:
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#qvdhxpnait .gt_row_group_first td {
+&#10;#vuhauergsh .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#qvdhxpnait .gt_row_group_first th {
+&#10;#vuhauergsh .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#qvdhxpnait .gt_summary_row {
+&#10;#vuhauergsh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -735,14 +735,14 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#qvdhxpnait .gt_first_summary_row {
+&#10;#vuhauergsh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_first_summary_row.thick {
+&#10;#vuhauergsh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#qvdhxpnait .gt_last_summary_row {
+&#10;#vuhauergsh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -751,7 +751,7 @@ These results can be further broken down by party:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_grand_summary_row {
+&#10;#vuhauergsh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -760,7 +760,7 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#qvdhxpnait .gt_first_grand_summary_row {
+&#10;#vuhauergsh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +769,7 @@ These results can be further broken down by party:
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_last_grand_summary_row_top {
+&#10;#vuhauergsh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -778,10 +778,10 @@ These results can be further broken down by party:
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_striped {
+&#10;#vuhauergsh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#qvdhxpnait .gt_table_body {
+&#10;#vuhauergsh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -789,7 +789,7 @@ These results can be further broken down by party:
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_footnotes {
+&#10;#vuhauergsh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -802,7 +802,7 @@ These results can be further broken down by party:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_footnote {
+&#10;#vuhauergsh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -810,7 +810,7 @@ These results can be further broken down by party:
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#qvdhxpnait .gt_sourcenotes {
+&#10;#vuhauergsh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -823,57 +823,57 @@ These results can be further broken down by party:
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#qvdhxpnait .gt_sourcenote {
+&#10;#vuhauergsh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#qvdhxpnait .gt_left {
+&#10;#vuhauergsh .gt_left {
   text-align: left;
 }
-&#10;#qvdhxpnait .gt_center {
+&#10;#vuhauergsh .gt_center {
   text-align: center;
 }
-&#10;#qvdhxpnait .gt_right {
+&#10;#vuhauergsh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#qvdhxpnait .gt_font_normal {
+&#10;#vuhauergsh .gt_font_normal {
   font-weight: normal;
 }
-&#10;#qvdhxpnait .gt_font_bold {
+&#10;#vuhauergsh .gt_font_bold {
   font-weight: bold;
 }
-&#10;#qvdhxpnait .gt_font_italic {
+&#10;#vuhauergsh .gt_font_italic {
   font-style: italic;
 }
-&#10;#qvdhxpnait .gt_super {
+&#10;#vuhauergsh .gt_super {
   font-size: 65%;
 }
-&#10;#qvdhxpnait .gt_footnote_marks {
+&#10;#vuhauergsh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#qvdhxpnait .gt_asterisk {
+&#10;#vuhauergsh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#qvdhxpnait .gt_indent_1 {
+&#10;#vuhauergsh .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#qvdhxpnait .gt_indent_2 {
+&#10;#vuhauergsh .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#qvdhxpnait .gt_indent_3 {
+&#10;#vuhauergsh .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#qvdhxpnait .gt_indent_4 {
+&#10;#vuhauergsh .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#qvdhxpnait .gt_indent_5 {
+&#10;#vuhauergsh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

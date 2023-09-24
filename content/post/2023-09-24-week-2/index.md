@@ -1,7 +1,7 @@
 ---
-title: 'Week 2: Natural Selection and the Political Mind'
+title: 'Week 2:'
 author: Annelies Quinton
-date: '2023-09-26'
+date: '2023-09-24'
 slug: []
 categories: []
 tags: []
@@ -10,7 +10,7 @@ tags: []
 ## Strategies
 
 | Variable Name | Variable Description                                                                                                                                                                                                                                                                                                           |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--------------------------|----------------------------------------------|
 | `backstabber` | 1\. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds                                                                                                                                                                                                       |
 | `cooperator`  | 1\. Cooperates systematically.                                                                                                                                                                                                                                                                                                 |
 | `forgiver`    | 1\. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.                                                                                                                                                                                              |
