@@ -1,166 +1,77 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		
-		
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+title: "Week 1: Making Decisions"
+author: "Annelies Quinton"
+date: 2023-09-19
+categories: []
+tags: []
+---
 
-		<title>Week 1: Making Decisions &middot; Political Psychology Blog</title>
+## Introduction
 
-		
-		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/fonts.css">
-		
-		<link rel="icon" href="/favicon.ico"/>
-		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+For this week’s post, I am looking at the relationship of perceived candidate competence and electoral success. The subjectivity of measuring competence illustrates how other variables may persist in an individual’s decision making process to ultimately determine competence. This idea can be defined as attribute substitution, in which a difficult question (such as defining competence) is substituted for an easier one. A method of substitution is evaluating a candidate’s competence based on their facial quality.
 
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Political Psychology Blog" />
+Through a psychological lens, this thought process is supported through the idea of different decision making systems in the brain. System 1 is described as our intuition and it is fast, automatic, and effortless. Conversely, system 2 is reasoning, and requires effort, time, and logic (Kahneman, D. 2003, 698). When connecting this idea to voting, one hypothesis is that for voters with less partisan loyalty or knowledge of the election, system 1 may be triggered and attribute substitution can occur, causing variables such as face ratings to determine one’s vote. 
 
-		<script src="/js/darkmode.js"></script>
-	</head>
+Although this rationale may appear disconnected, in the paper *Candidate Faces and Election Outcomes: Is the Face–Vote Correlation Caused by Candidate Selection?*, the scholars find “higher quality challenger faces are selected into more competitive districts” (Atkinson et al. 2009, 230). They ultimately assert that “…incumbents from the most competitive districts would have higher facial quality than incumbents from the most safe incumbent districts due to the selection process of better faces to competitive districts, inducing a negative relationship between incumbent face and incumbent vote” (Atkinson et al. 2009, 236).
 
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/">
-					
-						<h2 class="nav-title">Political Psychology Blog</h2>
-					
-				</a>
-				<ul>
-    
-    
-</ul>
-			</div>
-		</nav>
+The data presented in this blog will address the question of whether seat safety is negatively correlated with incumbent facial quality?
 
-        <div id="darkModeToggle" onclick="toggleDarkMode()">
-  &#9680; 
-</div>
+## Data
 
-        
+The data used in this blog is a condensed and adapted version of the replication data for Atkinson et al. (2009). The variables of interest are `face_rating`,`incumbent`, `tossup`, and `face_rating`.
 
-<main>
-	
+| Variable Name | Variable Description                                                                               |
+|---------------|----------------------------------------------------------------------------------------------------|
+| `cook`        | The assessment of the Senate race from the Cook Political Report in the year prior to the election |
+| `year`        | The year of the election                                                                           |
+| `state`       | The state in which the candidate was running                                                       |
+| `face_rating` | The normalized rating of the candidate’s perceived competence based on an image of the face        |
+| `incumbent`   | An indicator variable for whether the candidate was an incumbent                                   |
+| `candidate`   | The candidate’s name                                                                               |
+| `party`       | The candidate’s political party                                                                    |
+| `tossup`      | An indicator variable for whether the race was one of two “tossup” categories according to Cook    |
+| `jpg`         | A unique identifier for the photo of the candidate                                                 |
 
+The data used in this blog is a condensed and adapted version of the [replication data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RSI8NR) for Atkinson et al. (2009).  The variables of interest are `face_rating`, `incumbent`, `tossup`, and `party`.
 
-        <div class="post">
-		<div class="post-info">
-    <span>Written by</span>
-        Annelies Quinton
-        <br>
-        <span>on&nbsp;</span><time datetime="2023-09-19 00:00:00 &#43;0000 UTC">September 19, 2023</time>
-</div>
+## Face Rating by Party
 
-		<h1 class="post-title">Week 1: Making Decisions</h1>
-<div class="post-line"></div>
+Before looking at seat safety and facial quality, it is important to evaluate trends in the data that could influence conclusions drawn. The graph below illustrates the distribution of face ratings based on the candidate’s party. From the graph, it is evident that there is little to no difference between the parties. This is significant in order for comparisons to be made between parties.
 
-		
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
-		
+## Face Rating: Incumbency and Toss-Up
 
+To understand the relationship between incumbent seat safety and face rating, I looked at the spread of face ratings for four different groups:
 
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p>For this week’s post, I am looking at the relationship of perceived candidate competence and electoral success. The subjectivity of measuring competence illustrates how other variables may persist in an individual’s decision making process to ultimately determine competence. This idea can be defined as attribute substitution, in which a difficult question (such as defining competence) is substituted for an easier one. A method of substitution is evaluating a candidate’s competence based on their facial quality.</p>
-<p>Through a psychological lens, this thought process is supported through the idea of different decision making systems in the brain. System 1 is described as our intuition and it is fast, automatic, and effortless. Conversely, system 2 is reasoning, and requires effort, time, and logic (Kahneman, D. 2003, 698). When connecting this idea to voting, one hypothesis is that for voters with less partisan loyalty or knowledge of the election, system 1 may be triggered and attribute substitution can occur, causing variables such as face ratings to determine one’s vote. </p>
-<p>Although this rationale may appear disconnected, in the paper <em>Candidate Faces and Election Outcomes: Is the Face–Vote Correlation Caused by Candidate Selection?</em>, the scholars find “higher quality challenger faces are selected into more competitive districts” (Atkinson et al. 2009, 230). They ultimately assert that “…incumbents from the most competitive districts would have higher facial quality than incumbents from the most safe incumbent districts due to the selection process of better faces to competitive districts, inducing a negative relationship between incumbent face and incumbent vote” (Atkinson et al. 2009, 236).</p>
-<p>The data presented in this blog will address the question of whether seat safety is negatively correlated with incumbent facial quality?</p>
-</div>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>The data used in this blog is a condensed and adapted version of the replication data for Atkinson et al. (2009). The variables of interest are <code>face_rating</code>,<code>incumbent</code>, <code>tossup</code>, and <code>face_rating</code>.</p>
-<table>
-<colgroup>
-<col width="36%" />
-<col width="63%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Variable Name</th>
-<th>Variable Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>cook</code></td>
-<td>The assessment of the Senate race from the Cook Political Report in the year prior to the election</td>
-</tr>
-<tr class="even">
-<td><code>year</code></td>
-<td>The year of the election</td>
-</tr>
-<tr class="odd">
-<td><code>state</code></td>
-<td>The state in which the candidate was running</td>
-</tr>
-<tr class="even">
-<td><code>face_rating</code></td>
-<td>The normalized rating of the candidate’s perceived competence based on an image of the face</td>
-</tr>
-<tr class="odd">
-<td><code>incumbent</code></td>
-<td>An indicator variable for whether the candidate was an incumbent</td>
-</tr>
-<tr class="even">
-<td><code>candidate</code></td>
-<td>The candidate’s name</td>
-</tr>
-<tr class="odd">
-<td><code>party</code></td>
-<td>The candidate’s political party</td>
-</tr>
-<tr class="even">
-<td><code>tossup</code></td>
-<td>An indicator variable for whether the race was one of two “tossup” categories according to Cook</td>
-</tr>
-<tr class="odd">
-<td><code>jpg</code></td>
-<td>A unique identifier for the photo of the candidate</td>
-</tr>
-</tbody>
-</table>
-<p>The data used in this blog is a condensed and adapted version of the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RSI8NR">replication data</a> for Atkinson et al. (2009).  The variables of interest are <code>face_rating</code>, <code>incumbent</code>, <code>tossup</code>, and <code>party</code>.</p>
-</div>
-<div id="face-rating-by-party" class="section level2">
-<h2>Face Rating by Party</h2>
-<p>Before looking at seat safety and facial quality, it is important to evaluate trends in the data that could influence conclusions drawn. The graph below illustrates the distribution of face ratings based on the candidate’s party. From the graph, it is evident that there is little to no difference between the parties. This is significant in order for comparisons to be made between parties.</p>
-<p><img src="http://example.org/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-</div>
-<div id="face-rating-incumbency-and-toss-up" class="section level2">
-<h2>Face Rating: Incumbency and Toss-Up</h2>
-<p>To understand the relationship between incumbent seat safety and face rating, I looked at the spread of face ratings for four different groups:</p>
-<div id="incumbents" class="section level3">
-<h3>Incumbents:</h3>
-<p><code>TT</code>: Incumbent in a toss-up race</p>
-<p><code>TF</code>: Incumbent not in a toss-up race</p>
-</div>
-<div id="challengers" class="section level3">
-<h3>Challengers:</h3>
-<p><code>CT</code>: Challenger in a toss-up race</p>
-<p><code>CF</code>: Challenger not in a toss-up race</p>
-<p>The table below displays the means for the four groups:</p>
-<div id="cdpbhhwgrb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cdpbhhwgrb table {
+### Incumbents:
+
+`TT`: Incumbent in a toss-up race
+
+`TF`: Incumbent not in a toss-up race
+
+### Challengers:
+
+`CT`: Challenger in a toss-up race
+
+`CF`: Challenger not in a toss-up race
+
+The table below displays the means for the four groups:
+
+<div id="gevbmehqil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gevbmehqil table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-#cdpbhhwgrb thead, #cdpbhhwgrb tbody, #cdpbhhwgrb tfoot, #cdpbhhwgrb tr, #cdpbhhwgrb td, #cdpbhhwgrb th {
+&#10;#gevbmehqil thead, #gevbmehqil tbody, #gevbmehqil tfoot, #gevbmehqil tr, #gevbmehqil td, #gevbmehqil th {
   border-style: none;
 }
-
-#cdpbhhwgrb p {
+&#10;#gevbmehqil p {
   margin: 0;
   padding: 0;
 }
-
-#cdpbhhwgrb .gt_table {
+&#10;#gevbmehqil .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -185,13 +96,11 @@
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_caption {
+&#10;#gevbmehqil .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-
-#cdpbhhwgrb .gt_title {
+&#10;#gevbmehqil .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -202,8 +111,7 @@
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-
-#cdpbhhwgrb .gt_subtitle {
+&#10;#gevbmehqil .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -214,8 +122,7 @@
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-
-#cdpbhhwgrb .gt_heading {
+&#10;#gevbmehqil .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -226,14 +133,12 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_bottom_border {
+&#10;#gevbmehqil .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_col_headings {
+&#10;#gevbmehqil .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -247,8 +152,7 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_col_heading {
+&#10;#gevbmehqil .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -267,8 +171,7 @@
   padding-right: 5px;
   overflow-x: hidden;
 }
-
-#cdpbhhwgrb .gt_column_spanner_outer {
+&#10;#gevbmehqil .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -279,16 +182,13 @@
   padding-left: 4px;
   padding-right: 4px;
 }
-
-#cdpbhhwgrb .gt_column_spanner_outer:first-child {
+&#10;#gevbmehqil .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-
-#cdpbhhwgrb .gt_column_spanner_outer:last-child {
+&#10;#gevbmehqil .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-
-#cdpbhhwgrb .gt_column_spanner {
+&#10;#gevbmehqil .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -299,12 +199,10 @@
   display: inline-block;
   width: 100%;
 }
-
-#cdpbhhwgrb .gt_spanner_row {
+&#10;#gevbmehqil .gt_spanner_row {
   border-bottom-style: hidden;
 }
-
-#cdpbhhwgrb .gt_group_heading {
+&#10;#gevbmehqil .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -329,8 +227,7 @@
   vertical-align: middle;
   text-align: left;
 }
-
-#cdpbhhwgrb .gt_empty_group_heading {
+&#10;#gevbmehqil .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -344,16 +241,13 @@
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-
-#cdpbhhwgrb .gt_from_md > :first-child {
+&#10;#gevbmehqil .gt_from_md > :first-child {
   margin-top: 0;
 }
-
-#cdpbhhwgrb .gt_from_md > :last-child {
+&#10;#gevbmehqil .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-
-#cdpbhhwgrb .gt_row {
+&#10;#gevbmehqil .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -371,8 +265,7 @@
   vertical-align: middle;
   overflow-x: hidden;
 }
-
-#cdpbhhwgrb .gt_stub {
+&#10;#gevbmehqil .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -384,8 +277,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#cdpbhhwgrb .gt_stub_row_group {
+&#10;#gevbmehqil .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -398,16 +290,13 @@
   padding-right: 5px;
   vertical-align: top;
 }
-
-#cdpbhhwgrb .gt_row_group_first td {
+&#10;#gevbmehqil .gt_row_group_first td {
   border-top-width: 2px;
 }
-
-#cdpbhhwgrb .gt_row_group_first th {
+&#10;#gevbmehqil .gt_row_group_first th {
   border-top-width: 2px;
 }
-
-#cdpbhhwgrb .gt_summary_row {
+&#10;#gevbmehqil .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -416,17 +305,14 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#cdpbhhwgrb .gt_first_summary_row {
+&#10;#gevbmehqil .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_first_summary_row.thick {
+&#10;#gevbmehqil .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-
-#cdpbhhwgrb .gt_last_summary_row {
+&#10;#gevbmehqil .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -435,8 +321,7 @@
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_grand_summary_row {
+&#10;#gevbmehqil .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -445,8 +330,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#cdpbhhwgrb .gt_first_grand_summary_row {
+&#10;#gevbmehqil .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -455,8 +339,7 @@
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_last_grand_summary_row_top {
+&#10;#gevbmehqil .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -465,12 +348,10 @@
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_striped {
+&#10;#gevbmehqil .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-
-#cdpbhhwgrb .gt_table_body {
+&#10;#gevbmehqil .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -478,8 +359,7 @@
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_footnotes {
+&#10;#gevbmehqil .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -492,8 +372,7 @@
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_footnote {
+&#10;#gevbmehqil .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -501,8 +380,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#cdpbhhwgrb .gt_sourcenotes {
+&#10;#gevbmehqil .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -515,72 +393,57 @@
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-
-#cdpbhhwgrb .gt_sourcenote {
+&#10;#gevbmehqil .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#cdpbhhwgrb .gt_left {
+&#10;#gevbmehqil .gt_left {
   text-align: left;
 }
-
-#cdpbhhwgrb .gt_center {
+&#10;#gevbmehqil .gt_center {
   text-align: center;
 }
-
-#cdpbhhwgrb .gt_right {
+&#10;#gevbmehqil .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-
-#cdpbhhwgrb .gt_font_normal {
+&#10;#gevbmehqil .gt_font_normal {
   font-weight: normal;
 }
-
-#cdpbhhwgrb .gt_font_bold {
+&#10;#gevbmehqil .gt_font_bold {
   font-weight: bold;
 }
-
-#cdpbhhwgrb .gt_font_italic {
+&#10;#gevbmehqil .gt_font_italic {
   font-style: italic;
 }
-
-#cdpbhhwgrb .gt_super {
+&#10;#gevbmehqil .gt_super {
   font-size: 65%;
 }
-
-#cdpbhhwgrb .gt_footnote_marks {
+&#10;#gevbmehqil .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-
-#cdpbhhwgrb .gt_asterisk {
+&#10;#gevbmehqil .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-
-#cdpbhhwgrb .gt_indent_1 {
+&#10;#gevbmehqil .gt_indent_1 {
   text-indent: 5px;
 }
-
-#cdpbhhwgrb .gt_indent_2 {
+&#10;#gevbmehqil .gt_indent_2 {
   text-indent: 10px;
 }
-
-#cdpbhhwgrb .gt_indent_3 {
+&#10;#gevbmehqil .gt_indent_3 {
   text-indent: 15px;
 }
-
-#cdpbhhwgrb .gt_indent_4 {
+&#10;#gevbmehqil .gt_indent_4 {
   text-indent: 20px;
 }
-
-#cdpbhhwgrb .gt_indent_5 {
+&#10;#gevbmehqil .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -589,8 +452,7 @@
     <tr class="gt_heading">
       <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Facial Rating Based on Incumbency and Toss-up</td>
     </tr>
-    
-    <tr class="gt_col_headings">
+    &#10;    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Incumbent/Toss-up Status">Incumbent/Toss-up Status</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Avg. Face Rating">Avg. Face Rating</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="No. Candidates">No. Candidates</th>
@@ -616,30 +478,30 @@
 <td headers="2. Challengers (C_)  mean_face" class="gt_row gt_right">-0.01519612</td>
 <td headers="2. Challengers (C_)  candidates" class="gt_row gt_right">38</td></tr>
   </tbody>
-  
-  
+  &#10;  
 </table>
 </div>
-<p>Rows 1 and 2 show face ratings for incumbents in either a toss-up or safe seat. The data shows incumbents in toss-ups have a higher facial rating compared to incumbents in safe seats. In fact, they have the highest overall average rating across the four groups. This can be further broken down through the boxplots below:</p>
-<p><img src="http://example.org/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>These results can be further broken down by party:</p>
-<div id="whyokhbsve" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#whyokhbsve table {
+
+Rows 1 and 2 show face ratings for incumbents in either a toss-up or safe seat. The data shows incumbents in toss-ups have a higher facial rating compared to incumbents in safe seats. In fact, they have the highest overall average rating across the four groups. This can be further broken down through the boxplots below:
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+
+These results can be further broken down by party:
+
+<div id="qvaofpjxrh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qvaofpjxrh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-#whyokhbsve thead, #whyokhbsve tbody, #whyokhbsve tfoot, #whyokhbsve tr, #whyokhbsve td, #whyokhbsve th {
+&#10;#qvaofpjxrh thead, #qvaofpjxrh tbody, #qvaofpjxrh tfoot, #qvaofpjxrh tr, #qvaofpjxrh td, #qvaofpjxrh th {
   border-style: none;
 }
-
-#whyokhbsve p {
+&#10;#qvaofpjxrh p {
   margin: 0;
   padding: 0;
 }
-
-#whyokhbsve .gt_table {
+&#10;#qvaofpjxrh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -664,13 +526,11 @@
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_caption {
+&#10;#qvaofpjxrh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-
-#whyokhbsve .gt_title {
+&#10;#qvaofpjxrh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -681,8 +541,7 @@
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-
-#whyokhbsve .gt_subtitle {
+&#10;#qvaofpjxrh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -693,8 +552,7 @@
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-
-#whyokhbsve .gt_heading {
+&#10;#qvaofpjxrh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -705,14 +563,12 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_bottom_border {
+&#10;#qvaofpjxrh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_col_headings {
+&#10;#qvaofpjxrh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -726,8 +582,7 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_col_heading {
+&#10;#qvaofpjxrh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -746,8 +601,7 @@
   padding-right: 5px;
   overflow-x: hidden;
 }
-
-#whyokhbsve .gt_column_spanner_outer {
+&#10;#qvaofpjxrh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -758,16 +612,13 @@
   padding-left: 4px;
   padding-right: 4px;
 }
-
-#whyokhbsve .gt_column_spanner_outer:first-child {
+&#10;#qvaofpjxrh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-
-#whyokhbsve .gt_column_spanner_outer:last-child {
+&#10;#qvaofpjxrh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-
-#whyokhbsve .gt_column_spanner {
+&#10;#qvaofpjxrh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -778,12 +629,10 @@
   display: inline-block;
   width: 100%;
 }
-
-#whyokhbsve .gt_spanner_row {
+&#10;#qvaofpjxrh .gt_spanner_row {
   border-bottom-style: hidden;
 }
-
-#whyokhbsve .gt_group_heading {
+&#10;#qvaofpjxrh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -808,8 +657,7 @@
   vertical-align: middle;
   text-align: left;
 }
-
-#whyokhbsve .gt_empty_group_heading {
+&#10;#qvaofpjxrh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -823,16 +671,13 @@
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-
-#whyokhbsve .gt_from_md > :first-child {
+&#10;#qvaofpjxrh .gt_from_md > :first-child {
   margin-top: 0;
 }
-
-#whyokhbsve .gt_from_md > :last-child {
+&#10;#qvaofpjxrh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-
-#whyokhbsve .gt_row {
+&#10;#qvaofpjxrh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -850,8 +695,7 @@
   vertical-align: middle;
   overflow-x: hidden;
 }
-
-#whyokhbsve .gt_stub {
+&#10;#qvaofpjxrh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -863,8 +707,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#whyokhbsve .gt_stub_row_group {
+&#10;#qvaofpjxrh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -877,16 +720,13 @@
   padding-right: 5px;
   vertical-align: top;
 }
-
-#whyokhbsve .gt_row_group_first td {
+&#10;#qvaofpjxrh .gt_row_group_first td {
   border-top-width: 2px;
 }
-
-#whyokhbsve .gt_row_group_first th {
+&#10;#qvaofpjxrh .gt_row_group_first th {
   border-top-width: 2px;
 }
-
-#whyokhbsve .gt_summary_row {
+&#10;#qvaofpjxrh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -895,17 +735,14 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#whyokhbsve .gt_first_summary_row {
+&#10;#qvaofpjxrh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_first_summary_row.thick {
+&#10;#qvaofpjxrh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-
-#whyokhbsve .gt_last_summary_row {
+&#10;#qvaofpjxrh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -914,8 +751,7 @@
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_grand_summary_row {
+&#10;#qvaofpjxrh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -924,8 +760,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#whyokhbsve .gt_first_grand_summary_row {
+&#10;#qvaofpjxrh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -934,8 +769,7 @@
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_last_grand_summary_row_top {
+&#10;#qvaofpjxrh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -944,12 +778,10 @@
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_striped {
+&#10;#qvaofpjxrh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-
-#whyokhbsve .gt_table_body {
+&#10;#qvaofpjxrh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -957,8 +789,7 @@
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_footnotes {
+&#10;#qvaofpjxrh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -971,8 +802,7 @@
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_footnote {
+&#10;#qvaofpjxrh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -980,8 +810,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#whyokhbsve .gt_sourcenotes {
+&#10;#qvaofpjxrh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -994,72 +823,57 @@
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-
-#whyokhbsve .gt_sourcenote {
+&#10;#qvaofpjxrh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-
-#whyokhbsve .gt_left {
+&#10;#qvaofpjxrh .gt_left {
   text-align: left;
 }
-
-#whyokhbsve .gt_center {
+&#10;#qvaofpjxrh .gt_center {
   text-align: center;
 }
-
-#whyokhbsve .gt_right {
+&#10;#qvaofpjxrh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-
-#whyokhbsve .gt_font_normal {
+&#10;#qvaofpjxrh .gt_font_normal {
   font-weight: normal;
 }
-
-#whyokhbsve .gt_font_bold {
+&#10;#qvaofpjxrh .gt_font_bold {
   font-weight: bold;
 }
-
-#whyokhbsve .gt_font_italic {
+&#10;#qvaofpjxrh .gt_font_italic {
   font-style: italic;
 }
-
-#whyokhbsve .gt_super {
+&#10;#qvaofpjxrh .gt_super {
   font-size: 65%;
 }
-
-#whyokhbsve .gt_footnote_marks {
+&#10;#qvaofpjxrh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-
-#whyokhbsve .gt_asterisk {
+&#10;#qvaofpjxrh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-
-#whyokhbsve .gt_indent_1 {
+&#10;#qvaofpjxrh .gt_indent_1 {
   text-indent: 5px;
 }
-
-#whyokhbsve .gt_indent_2 {
+&#10;#qvaofpjxrh .gt_indent_2 {
   text-indent: 10px;
 }
-
-#whyokhbsve .gt_indent_3 {
+&#10;#qvaofpjxrh .gt_indent_3 {
   text-indent: 15px;
 }
-
-#whyokhbsve .gt_indent_4 {
+&#10;#qvaofpjxrh .gt_indent_4 {
   text-indent: 20px;
 }
-
-#whyokhbsve .gt_indent_5 {
+&#10;#qvaofpjxrh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1068,8 +882,7 @@
     <tr class="gt_heading">
       <td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Facial Rating Based on Incumbency and Toss-up</td>
     </tr>
-    
-    <tr class="gt_col_headings">
+    &#10;    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Incumbent/Toss-up Status">Incumbent/Toss-up Status</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Avg. Face Rating">Avg. Face Rating</th>
     </tr>
@@ -1104,41 +917,20 @@
     <tr><td headers="4. Democrat Challenger (C_)  seat_party" class="gt_row gt_left">dem_CT</td>
 <td headers="4. Democrat Challenger (C_)  mean_face" class="gt_row gt_right">-0.1569904</td></tr>
   </tbody>
-  
-  
+  &#10;  
 </table>
 </div>
-<p><img src="http://example.org/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>The table and boxplots show that, broken down by party, incumbents in toss-up races had the highest facial rating. Democratic incumbents in toss-up races had the overall highest average rating.</p>
-</div>
-</div>
-<div id="discussion" class="section level2">
-<h2>Discussion</h2>
-<p>The results demonstrate that toss-up incumbents had the highest facial rating, indicating that candidates with higher facial quality have an advantage in . These findings agree with what Atkinson et al. (2009) suggest, that seat safety is negatively correlated with incumbent facial quality. Atkinson et al. (2009) suggest these trends are because candidates with a better facial rating are deemed more competent, and will select into races in which they have a higher chance of winning. Therefore, lower quality candidates will select into less competitive races. This creates a correlation between facial quality and seat competitiveness (Atkinson et al. 2009, 231).</p>
-</div>
-<div id="references" class="section level2">
-<h2>References</h2>
-<p>Kahneman, D. (2003). A Perspective on Judgement and Choice: Mapping Bounded Rationality. <em>American Psychologist,</em> 58(9):697–720.</p>
-<p>Atkinson, M. A., Enos, R. D., and Hill., S. J. (2009). Candidate faces and election outcomes: Is the face-vote correlation caused by candidate selection? <em>Quarterly Journal of Political Science</em>, 4:229–249.</p>
-</div>
 
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
-		
-	</div>
+The table and boxplots show that, broken down by party, incumbents in toss-up races had the highest facial rating. Democratic incumbents in toss-up races had the overall highest average rating.
 
-	<div class="pagination">
+## Discussion
 
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
+The results demonstrate that toss-up incumbents had the highest facial rating, indicating that candidates with higher facial quality have an advantage in . These findings agree with what Atkinson et al. (2009) suggest, that seat safety is negatively correlated with incumbent facial quality. Atkinson et al. (2009) suggest these trends are because candidates with a better facial rating are deemed more competent, and will select into races in which they have a higher chance of winning. Therefore, lower quality candidates will select into less competitive races. This creates a correlation between facial quality and seat competitiveness (Atkinson et al. 2009, 231).
 
+## References
 
-        		<footer>
-			
-			<span>
-			&copy; <time datetime="2023-09-24 15:23:04.854995 -0400 EDT m=&#43;0.107488876">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
+Kahneman, D. (2003). A Perspective on Judgement and Choice: Mapping Bounded Rationality. *American Psychologist,* 58(9):697–720.
 
-    </body>
-</html>
+Atkinson, M. A., Enos, R. D., and Hill., S. J. (2009). Candidate faces and election outcomes: Is the face-vote correlation caused by candidate selection? *Quarterly Journal of Political Science*, 4:229–249.
