@@ -28,7 +28,7 @@ The strategies are listed below:
 ## Strategies
 
 | Variable Name | Variable Description                                                                                                                                                                                                                                                                                                           |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------|------------------------------------------------------------|
 | `backstabber` | 1\. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds                                                                                                                                                                                                       |
 | `cooperator`  | 1\. Cooperates systematically.                                                                                                                                                                                                                                                                                                 |
 | `forgiver`    | 1\. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.                                                                                                                                                                                              |
@@ -49,10 +49,19 @@ The data used in the blog is the outcome of the games. For each game, the strate
 
 
 
-
 ```r
 heatmap_graph
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
+## Win Counts
+
+
+
+
+```r
+win_count_plot
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
