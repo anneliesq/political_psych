@@ -176,3 +176,4 @@ The results demonstrate that toss-up incumbents had the highest facial rating, i
 Kahneman, D. (2003). A Perspective on Judgement and Choice: Mapping Bounded Rationality. *American Psychologist,* 58(9):697--720.
 
 Atkinson, M. A., Enos, R. D., and Hill., S. J. (2009). Candidate faces and election outcomes: Is the face-vote correlation caused by candidate selection? *Quarterly Journal of Political Science*, 4:229--249.
+
