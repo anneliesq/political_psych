@@ -40,7 +40,7 @@ The strategies are listed below:
 
 The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (`player1` and `player2`), the scores for each player (`score1`, `score2`), and the outcome of the game (`winner`). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.
 
-```{r setup, include=F}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 # check for required packages and install if not already
@@ -57,7 +57,7 @@ library(ggplot2) # ggplot()
 
 ```
 
-```{r, include=F}
+```{r, include=FALSE}
 pd_data <- read_csv("Copy of prisoners_dilemma_data.xlsx - Sheet1.csv") |> 
   mutate(winner = case_when( # if you are interested, case_when() is a very useful
     score1 > score2 ~ player1, # function to create new variables. check out how it
@@ -76,7 +76,7 @@ player_data_long <- bind_rows(player1_data, player2_data)
 
 ## Game Results
 
-```{r, include=F}
+```{r, include=FALSE}
 # df of just players and winners
 simplified_df <- pd_data %>% 
   select(player1, player2, winner)
@@ -103,7 +103,7 @@ heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)
 
 ## Win Counts
 
-```{r,include = F}
+```{r, include=FALSE}
 winner_counts <- pd_data %>% 
   count(winner) %>% 
   mutate(wins = n) %>% 
@@ -120,7 +120,7 @@ abs_value <- pd_data %>%
 ```
 ![Game Results(](unnamed-chunk-5-1.png)
 ## Score Comparison:
-```{r, include = F}
+```{r, include=FALSE}
 stacked_plot <- player_data_long |>
 ggplot(aes(x = opponent, y = score, fill = player)) +
 geom_bar(stat = "identity") +

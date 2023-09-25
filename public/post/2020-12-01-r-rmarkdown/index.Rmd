@@ -1,10 +1,9 @@
 ---
-title: 'Week 1: Making Decisions'
+title: "Week 1: Making Decisions"
 author: "Annelies Quinton"
-date: "2023-09-19"
-output: pdf_document
-tags: [] 
+date: 2023-09-19
 categories: []
+tags: []
 ---
 
 ```{r setup, include=FALSE}
@@ -165,6 +164,13 @@ p <- ggplot(senate_party, aes(x=seat_party, y=face_rating)) +
 gtTable_party
 p
 ```
+
+```{r, include=TRUE}
+plot = plot(x = senate_party$year, y = senate_party$face_rating)
+
+plot
+```
+
 
 The table and boxplots show that, broken down by party, incumbents in toss-up races had the highest facial rating. Democratic incumbents in toss-up races had the overall highest average rating.
 

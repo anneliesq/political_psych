@@ -165,6 +165,13 @@ gtTable_party
 p
 ```
 
+```{r, include=TRUE}
+plot = plot(x = senate_party$year, y = senate_party$face_rating)
+
+plot
+```
+
+
 The table and boxplots show that, broken down by party, incumbents in toss-up races had the highest facial rating. Democratic incumbents in toss-up races had the overall highest average rating.
 
 ## Discussion
