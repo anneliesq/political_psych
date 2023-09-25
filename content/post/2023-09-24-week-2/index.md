@@ -41,20 +41,126 @@ The strategies are listed below:
 The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (`player1` and `player2`), the scores for each player (`score1`, `score2`), and the outcome of the game (`winner`). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.
 
 
+```r
+knitr::opts_chunk$set(echo = TRUE)
+
+# check for required packages and install if not already
+list.of.packages <- c("tools", "roxygen2", "shiny", "dplyr", "ggvis", "progress")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
+if (length(new.packages)) install.packages(new.packages)
+
+# load libraries
+library(tools) # needed for shiny app
+library(readr) # read_csv()
+library(dplyr) # dplyr()
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
+library(ggplot2) # ggplot()
+```
 
 
+```r
+pd_data <- read_csv("Copy of prisoners_dilemma_data.xlsx - Sheet1.csv") |> 
+  mutate(winner = case_when( # if you are interested, case_when() is a very useful
+    score1 > score2 ~ player1, # function to create new variables. check out how it
+    score1 < score2 ~ player2, # works by googling.
+    score1 == score2 ~ "tie"
+  ))
+```
+
+```
+## Rows: 21 Columns: 4
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (2): player1, player2
+## dbl (2): score1, score2
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```r
+pd_data_un <- pd_data %>% 
+  mutate("same" = ifelse(player1 == player2, 1, 0)) %>%
+  filter(same != 1) 
+
+player1_data <- pd_data |> select(player = player1, score = score1, opponent = player2)
+player2_data <- pd_data |> select(player = player2, score = score2, opponent = player1)
+player_data_long <- bind_rows(player1_data, player2_data)
+```
 
 ## Game Results
 
 
+```r
+# df of just players and winners
+simplified_df <- pd_data %>% 
+  select(player1, player2, winner)
+
+# get inverse of df to have no white spots in heat map
+df2 <- data.frame()
+for (i in (1:nrow(pd_data))){
+  player1 <- pd_data$player2[i]
+  player2 <- pd_data$player1[i]
+  winner <- pd_data$winner[i]
+  
+  df2 <- rbind(df2, data.frame(player1,player2,winner))
+}
+
+# combine dfs
+heatmap_df <- rbind(simplified_df, df2)
+  
+# graph heatmap
+heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)) +
+  geom_tile() +
+  labs(x = "Player 1", y = "Player 2", fill = "Color Legend", title = "Game Results for Each Strategy") 
+```
 ![Game Results(](unnamed-chunk-3-1.png)
 
 ## Win Counts
 
 
+```r
+winner_counts <- pd_data %>% 
+  count(winner) %>% 
+  mutate(wins = n) %>% 
+  select(winner, wins)
+
+win_count_plot <- ggplot(data=winner_counts, aes(x=winner, y=wins)) +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_minimal() +
+  labs(x="Winner", y="No. of Games", title="Number of Games for Each End Result (Win/Tie)")
+
+abs_value <- pd_data %>% 
+  mutate(difference = abs((score1 - score2)))
+```
 ![Game Results(](unnamed-chunk-5-1.png)
 ## Score Comparison:
 
+```r
+stacked_plot <- player_data_long |>
+ggplot(aes(x = opponent, y = score, fill = player)) +
+geom_bar(stat = "identity") +
+ggtitle("Each strategy against all others")
+```
 
 
 ![Stacked Results(](stacked.png)
@@ -63,5 +169,5 @@ The data used in the blog is the outcome of the games. For each game, the strate
 win_count_plot
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 

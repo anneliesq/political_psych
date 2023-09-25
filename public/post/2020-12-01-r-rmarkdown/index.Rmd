@@ -1,9 +1,10 @@
 ---
-title: "Week 1: Making Decisions"
+title: 'Week 1: Making Decisions'
 author: "Annelies Quinton"
-date: 2023-09-19
+date: "2023-09-19"
+output: pdf_document
+tags: [] 
 categories: []
-tags: []
 ---
 
 ```{r setup, include=FALSE}
