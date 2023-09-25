@@ -28,7 +28,7 @@ The strategies are listed below:
 ## Strategies
 
 | Variable Name | Variable Description                                                                                                                                                                                                                                                                                                           |
-|------------|------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | `backstabber` | 1\. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds                                                                                                                                                                                                       |
 | `cooperator`  | 1\. Cooperates systematically.                                                                                                                                                                                                                                                                                                 |
 | `forgiver`    | 1\. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.                                                                                                                                                                                              |
@@ -40,8 +40,9 @@ The strategies are listed below:
 
 The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (`player1` and `player2`), the scores for each player (`score1`, `score2`), and the outcome of the game (`winner`). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.
 
-```{r setup, echo=F, include=F}
-knitr::opts_chunk$set(collapse = TRUE)
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.path = "static")
 
 # check for required packages and install if not already
 list.of.packages <- c("tools", "roxygen2", "shiny", "dplyr", "ggvis", "progress")
@@ -57,7 +58,7 @@ library(ggplot2) # ggplot()
 
 ```
 
-```{r, echo=F, include=F}
+```{r, include=F}
 pd_data <- read_csv("Copy of prisoners_dilemma_data.xlsx - Sheet1.csv") |> 
   mutate(winner = case_when( # if you are interested, case_when() is a very useful
     score1 > score2 ~ player1, # function to create new variables. check out how it
@@ -76,7 +77,7 @@ player_data_long <- bind_rows(player1_data, player2_data)
 
 ## Game Results
 
-```{r, echo=F, , include=F}
+```{r, include=F}
 # df of just players and winners
 simplified_df <- pd_data %>% 
   select(player1, player2, winner)
@@ -101,13 +102,13 @@ heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)
 
 ```
 
-```{r, echo=F}
+```{r, imclude=T}
 heatmap_graph
 ```
 
 ## Win Counts
 
-```{r, echo=F}
+```{r,include = F}
 winner_counts <- pd_data %>% 
   count(winner) %>% 
   mutate(wins = n) %>% 
@@ -123,6 +124,11 @@ abs_value <- pd_data %>%
 
 ```
 
-```{r, echo=F, include=T}
-win_count_plot
+```{r, include=T}
+ggplot(data=winner_counts, aes(x=winner, y=wins)) +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_minimal() +
+  labs(x="Winner", y="No. of Games", title="Number of Games for Each End Result (Win/Tie)")
 ```
+
+
