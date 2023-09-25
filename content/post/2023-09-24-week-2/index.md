@@ -48,20 +48,10 @@ The data used in the blog is the outcome of the games. For each game, the strate
 
 
 
-
-```r
-heatmap_graph
-```
-
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 ## Win Counts
 
 
 
-
-```r
-win_count_plot
-```
-
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />

@@ -107,10 +107,65 @@
 </table>
 <h2 id="data">Data</h2>
 <p>The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (<code>player1</code> and <code>player2</code>), the scores for each player (<code>score1</code>, <code>score2</code>), and the outcome of the game (<code>winner</code>). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.</p>
-<h2 id="game-results">Game Results</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>heatmap_graph
+<pre tabindex="0"><code>## 
+## Attaching package: &#39;dplyr&#39;
+</code></pre><pre tabindex="0"><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag
+</code></pre><pre tabindex="0"><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+</code></pre><pre tabindex="0"><code>## Rows: 21 Columns: 4
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &#34;,&#34;
+## chr (2): player1, player2
+## dbl (2): score1, score2
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</code></pre><h2 id="game-results">Game Results</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># df of just players and winners</span>
+</span></span><span style="display:flex;"><span>simplified_df <span style="color:#f92672">&lt;-</span> pd_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">select</span>(player1, player2, winner)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># get inverse of df to have no white spots in heat map</span>
+</span></span><span style="display:flex;"><span>df2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">for </span>(i <span style="color:#a6e22e">in </span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nrow</span>(pd_data))){
+</span></span><span style="display:flex;"><span>  player1 <span style="color:#f92672">&lt;-</span> pd_data<span style="color:#f92672">$</span>player2[i]
+</span></span><span style="display:flex;"><span>  player2 <span style="color:#f92672">&lt;-</span> pd_data<span style="color:#f92672">$</span>player1[i]
+</span></span><span style="display:flex;"><span>  winner <span style="color:#f92672">&lt;-</span> pd_data<span style="color:#f92672">$</span>winner[i]
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  df2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(df2, <span style="color:#a6e22e">data.frame</span>(player1,player2,winner))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># combine dfs</span>
+</span></span><span style="display:flex;"><span>heatmap_df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(simplified_df, df2)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># graph heatmap</span>
+</span></span><span style="display:flex;"><span>heatmap_graph <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(heatmap_df, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> player1, y <span style="color:#f92672">=</span> player2, fill <span style="color:#f92672">=</span> winner)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_tile</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Player 1&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Player 2&#34;</span>, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Color Legend&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Game Results for Each Strategy&#34;</span>) 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>heatmap_graph
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <h2 id="win-counts">Win Counts</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>winner_counts <span style="color:#f92672">&lt;-</span> pd_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(winner) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(wins <span style="color:#f92672">=</span> n) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">select</span>(winner, wins)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>win_count_plot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(data<span style="color:#f92672">=</span>winner_counts, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>winner, y<span style="color:#f92672">=</span>wins)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_bar</span>(stat<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;identity&#34;</span>, fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;steelblue&#34;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_minimal</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Winner&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;No. of Games&#34;</span>, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Number of Games for Each End Result (Win/Tie)&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>abs_value <span style="color:#f92672">&lt;-</span> pd_data <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(difference <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>((score1 <span style="color:#f92672">-</span> score2)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(abs_value, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>difference)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_histogram</span>(color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span>, fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;white&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>win_count_plot
 </span></span></code></pre></div><!-- raw HTML omitted -->
 
@@ -129,7 +184,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-09-24 19:48:57.240711 -0400 EDT m=&#43;0.095099835">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-09-24 19:57:28.820534 -0400 EDT m=&#43;0.041542001">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

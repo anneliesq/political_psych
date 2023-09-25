@@ -40,7 +40,7 @@ The strategies are listed below:
 
 The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (`player1` and `player2`), the scores for each player (`score1`, `score2`), and the outcome of the game (`winner`). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.
 
-```{r, include=F}
+```{r setup, echo=F, include=F}
 knitr::opts_chunk$set(collapse = TRUE)
 
 # check for required packages and install if not already
@@ -54,9 +54,10 @@ library(readr) # read_csv()
 library(dplyr) # dplyr()
 library(ggplot2) # ggplot()
 
+
 ```
 
-```{r, include=F}
+```{r, echo=F, include=F}
 pd_data <- read_csv("Copy of prisoners_dilemma_data.xlsx - Sheet1.csv") |> 
   mutate(winner = case_when( # if you are interested, case_when() is a very useful
     score1 > score2 ~ player1, # function to create new variables. check out how it
@@ -75,7 +76,7 @@ player_data_long <- bind_rows(player1_data, player2_data)
 
 ## Game Results
 
-```{r, include=F}
+```{r, echo=F, , include=F}
 # df of just players and winners
 simplified_df <- pd_data %>% 
   select(player1, player2, winner)
@@ -100,7 +101,7 @@ heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)
 
 ```
 
-```{r}
+```{r, echo=F}
 heatmap_graph
 ```
 
@@ -116,8 +117,12 @@ win_count_plot <- ggplot(data=winner_counts, aes(x=winner, y=wins)) +
   geom_bar(stat="identity", fill="steelblue")+
   theme_minimal() +
   labs(x="Winner", y="No. of Games", title="Number of Games for Each End Result (Win/Tie)")
+
+abs_value <- pd_data %>% 
+  mutate(difference = abs((score1 - score2)))
+
 ```
 
-```{r}
+```{r, echo=F, include=T}
 win_count_plot
 ```
