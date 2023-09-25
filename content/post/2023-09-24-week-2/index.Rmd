@@ -28,7 +28,7 @@ The strategies are listed below:
 ## Strategies
 
 | Variable Name | Variable Description                                                                                                                                                                                                                                                                                                           |
-|----------------|--------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | `backstabber` | 1\. Cooperates until the opponent defects 3 times. 2. Defects forever after that. 3. Always defects in the last 2 rounds                                                                                                                                                                                                       |
 | `cooperator`  | 1\. Cooperates systematically.                                                                                                                                                                                                                                                                                                 |
 | `forgiver`    | 1\. Cooperates the first time it plays a new opponent. 2. After that, defects if opponent has defected more than 10% of the time.                                                                                                                                                                                              |
@@ -98,12 +98,8 @@ heatmap_df <- rbind(simplified_df, df2)
 heatmap_graph <- ggplot(heatmap_df, aes(x = player1, y = player2, fill = winner)) +
   geom_tile() +
   labs(x = "Player 1", y = "Player 2", fill = "Color Legend", title = "Game Results for Each Strategy") 
-
 ```
-
-```{r, imclude=T}
-heatmap_graph
-```
+![Game Results(](unnamed-chunk-3-1.png)
 
 ## Win Counts
 
@@ -122,12 +118,18 @@ abs_value <- pd_data %>%
   mutate(difference = abs((score1 - score2)))
 
 ```
-
-```{r, include=T}
-ggplot(data=winner_counts, aes(x=winner, y=wins)) +
-  geom_bar(stat="identity", fill="steelblue")+
-  theme_minimal() +
-  labs(x="Winner", y="No. of Games", title="Number of Games for Each End Result (Win/Tie)")
+![Game Results(](unnamed-chunk-5-1.png)
+## Score Comparison:
+```{r, include = F}
+stacked_plot <- player_data_long |>
+ggplot(aes(x = opponent, y = score, fill = player)) +
+geom_bar(stat = "identity") +
+ggtitle("Each strategy against all others")
 ```
 
+
+![Stacked Results(](stacked.png)
+```{r}
+win_count_plot
+```
 

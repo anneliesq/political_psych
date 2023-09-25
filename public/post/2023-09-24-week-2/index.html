@@ -108,13 +108,12 @@
 <h2 id="data">Data</h2>
 <p>The data used in the blog is the outcome of the games. For each game, the strategies playing one another are listed (<code>player1</code> and <code>player2</code>), the scores for each player (<code>score1</code>, <code>score2</code>), and the outcome of the game (<code>winner</code>). There was a total of 21 games. Each strategy played the other strategies (15 games) and itself (6 games). The scores are the sum of 100 rounds with 100 simulations for each round. The maximum score for both players is 6 points for each round, 600 total points.</p>
 <h2 id="game-results">Game Results</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>heatmap_graph
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<p><img src="unnamed-chunk-3-1.png" alt="Game Results("></p>
 <h2 id="win-counts">Win Counts</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(data<span style="color:#f92672">=</span>winner_counts, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>winner, y<span style="color:#f92672">=</span>wins)) <span style="color:#f92672">+</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_bar</span>(stat<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;identity&#34;</span>, fill<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;steelblue&#34;</span>)<span style="color:#f92672">+</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_minimal</span>() <span style="color:#f92672">+</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Winner&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;No. of Games&#34;</span>, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Number of Games for Each End Result (Win/Tie)&#34;</span>)
+<p><img src="unnamed-chunk-5-1.png" alt="Game Results("></p>
+<h2 id="score-comparison">Score Comparison:</h2>
+<p><img src="stacked.png" alt="Stacked Results("></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>win_count_plot
 </span></span></code></pre></div><!-- raw HTML omitted -->
 
 
@@ -132,7 +131,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2023-09-24 22:04:43.330345 -0400 EDT m=&#43;0.062338167">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2023-09-24 22:56:15.297523 -0400 EDT m=&#43;0.044113792">2023</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
