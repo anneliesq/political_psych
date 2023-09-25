@@ -53,7 +53,7 @@ The data used in the blog is the outcome of the games. For each game, the strate
 heatmap_graph
 ```
 
-<img src="staticunnamed-chunk-3-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 ## Win Counts
 
@@ -67,6 +67,6 @@ ggplot(data=winner_counts, aes(x=winner, y=wins)) +
   labs(x="Winner", y="No. of Games", title="Number of Games for Each End Result (Win/Tie)")
 ```
 
-<img src="staticunnamed-chunk-5-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 

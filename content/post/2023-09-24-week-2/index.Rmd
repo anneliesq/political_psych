@@ -42,7 +42,6 @@ The data used in the blog is the outcome of the games. For each game, the strate
 
 ```{r setup, include=F}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(echo = TRUE, fig.path = "static")
 
 # check for required packages and install if not already
 list.of.packages <- c("tools", "roxygen2", "shiny", "dplyr", "ggvis", "progress")
